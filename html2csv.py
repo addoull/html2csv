@@ -41,5 +41,5 @@ for table in soup.findAll("table"):
     for row in table.findAll('tr'):
       cols = row.findAll(['td','th'])
       if cols:
-        cols = [x.text for x in cols]
+        cols = [x.text.encode("utf-8") for x in cols]
         fout.writerow(cols)
